@@ -1,0 +1,10 @@
+107,Tony Stark,10
+103,Steve Rodgers,15
+106,Stephen Strange,10
+104,Bruce Banner,50
+105,Natasha Roumanov,20
+109,Clint Barton,90
+102,Thor Odinson,80
+101,James Rhodes,20
+108,Peter Parker,10
+110,Reed Richards,60

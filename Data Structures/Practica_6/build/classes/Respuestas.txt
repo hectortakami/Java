@@ -1,0 +1,83 @@
+1.
+    Integer[] arr = {790, 175, 284, 581, 374, 799, 852, 685, 486, 333}; 
+    
+    Pivot = p = 333
+    {790, 175, 284, 581, 374, 799, 852, 685, 486} {333}  arr[i] < p = False
+      i                                             p
+
+    {790, 175, 284, 581, 374, 799, 852, 685, 486} {333}  arr[i] < p = True
+           i                                        p
+->  {175, 790, 284, 581, 374, 799, 852, 685, 486}
+           j
+
+    {175, 790, 284, 581, 374, 799, 852, 685, 486} {333}  arr[i] < p = True
+                i                                   p
+->  {175, 284, 790, 581, 374, 799, 852, 685, 486}
+                j
+
+    {175, 284, 790, 581, 374, 799, 852, 685, 486} {333}  arr[i] < p = False
+                     i                              p
+    {175, 284, 790, 581, 374, 799, 852, 685, 486} {333}  arr[i] < p = False
+                          i                         p
+    {175, 284, 790, 581, 374, 799, 852, 685, 486} {333}  arr[i] < p = False
+                                 .............i     p
+    //Insertion arr[p] -> j
+    {175, 284, 333, 790, 581, 374, 799, 852, 685, 486}
+
+    Pivot = p = 486
+    {175, 284, 333, 790, 581, 374, 799, 852, 685} {486}  arr[i] < p = False
+                     i                              p
+
+    {175, 284, 333, 790, 581, 374, 799, 852, 685} {486}  arr[i] < p = False
+                          i                         p
+
+    {175, 284, 333, 790, 581, 374, 799, 852, 685} {486}  arr[i] < p = True
+                               i                    p
+->  {175, 284, 333, 374, 581, 790, 799, 852, 685}
+                          j
+
+    {175, 284, 333, 374, 581, 790, 799, 852, 685} {486}  arr[i] < p = False
+                                ............. i     p
+    //Insertion arr[p] -> j
+    {175, 284, 333, 374, 486, 581, 790, 799, 852, 685}
+
+    Pivot = p = 685
+    {175, 284, 333, 374, 486, 581, 790, 799, 852} {685}  arr[i] < p = False
+                                    j   ..... i
+                             
+    //Insertion arr[p] -> j
+    {175, 284, 333, 374, 486, 581, 685, 790, 799, 852}
+
+    ... The Pivot will repeat, but because the condition arr[i] < p = False
+        will be always in the same place without any insertion, finally returning:
+
+        Integer[] arr = {175, 284, 333, 374, 486, 581, 685, 790, 799, 852}
+
+
+2. 
+
+    Standard QuickSort (Time in Big-O notation): *Best = O(n log n) 
+                                                 *Worst = O(n^2)
+    
+    Modify QuickSort (Time in Big-O notation):  
+
+    The modify version consider the posibility that the ScanUp content can be 
+    similar to the pivot content, so it will increment +1 to the index scanning
+    a position that might be analized. It will decrease the execution time and 
+    will give the algorithm more stability.
+
+    {5,5,3}{5}
+
+3.  
+    Stable:         Non-very Stable
+    * MergeSort     *QuickSort
+    * Insertion     *Sort
+
+4.
+
+    We use generics to control the type of parameters and return their respective
+    values. It makes the methods and classes re-usable and more flexible for any 
+    kind of object. It also reduce the code time execution avoiding the casts.
+
+
+
